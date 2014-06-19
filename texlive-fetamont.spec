@@ -1,12 +1,12 @@
-# revision 32637
+# revision 33221
 # category Package
 # catalog-ctan /fonts/fetamont
-# catalog-date 2014-01-10 22:25:23 +0100
+# catalog-date 2014-03-18 17:58:58 +0100
 # catalog-license lppl1.3
-# catalog-version 1.2
+# catalog-version 1.3
 Name:		texlive-fetamont
-Version:	1.2
-Release:	2
+Version:	1.3
+Release:	1
 Summary:	Extended version of Knuth's logo typeface
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fetamont
@@ -20,8 +20,8 @@ Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
 
 %description
-The fetamont typeface was designed in METAFONT and, and extends
-the Logo fonts to complete the T1 encoding. The designs of the
+The fetamont typeface was designed in METAFONT and extends the
+Logo fonts to complete the T1 encoding. The designs of the
 glyphs A, E, F, M, N, O, P, S and T are based on the METAFONT
 constructions by D. E. Knuth. The glyphs Y and 1 imitate the
 shapes of the corresponding glyphs in the METATYPE1 logo.
