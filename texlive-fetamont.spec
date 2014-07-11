@@ -6,7 +6,7 @@
 # catalog-version 1.3
 Name:		texlive-fetamont
 Version:	1.3
-Release:	1
+Release:	2
 Summary:	Extended version of Knuth's logo typeface
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fetamont
