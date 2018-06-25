@@ -1,5 +1,5 @@
 Name:		texlive-fetamont
-Version:	20170417
+Version:	20180303
 Release:	1
 Summary:	Extended version of Knuth's logo typeface
 Group:		Publishing
