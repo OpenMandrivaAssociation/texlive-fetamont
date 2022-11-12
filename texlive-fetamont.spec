@@ -1,13 +1,13 @@
 Name:		texlive-fetamont
-Version:	20190228
+Version:	43812
 Release:	1
 Summary:	Extended version of Knuth's logo typeface
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/fetamont
 License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.doc.r%{version}.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.source.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -21,12 +21,12 @@ constructions by D. E. Knuth. The glyphs Y and 1 imitate the
 shapes of the corresponding glyphs in the METATYPE1 logo.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -43,7 +43,8 @@ shapes of the corresponding glyphs in the METATYPE1 logo.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
