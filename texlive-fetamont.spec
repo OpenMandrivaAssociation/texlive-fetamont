@@ -3,7 +3,7 @@ Version:	43812
 Release:	2
 Summary:	Extended version of Knuth's logo typeface
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/fetamont
+URL:		https://www.ctan.org/tex-archive/fonts/fetamont
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.doc.r%{version}.tar.xz
