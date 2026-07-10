@@ -1,53 +1,26 @@
-Name:		texlive-fetamont
-Version:	43812
-Release:	2
-Summary:	Extended version of Knuth's logo typeface
+%global tl_name fetamont
+%global tl_revision 77682
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
+Summary:	Extended version of Knuths logo typeface
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/fetamont
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.source.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/fetamont.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The fetamont typeface was designed in METAFONT and extends the
-Logo fonts to complete the T1 encoding. The designs of the
-glyphs A, E, F, M, N, O, P, S and T are based on the METAFONT
-constructions by D. E. Knuth. The glyphs Y and 1 imitate the
-shapes of the corresponding glyphs in the METATYPE1 logo.
+The fetamont typeface was designed in Metafont and extends the Logo
+fonts to complete the T1 encoding. The designs of the glyphs A, E, F, M,
+N, O, P, S and T are based on the Metafont constructions by D. E. Knuth.
+The glyphs Y and 1 imitate the shapes of the corresponding glyphs in the
+METATYPE1 logo.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/afm/public/fetamont
-%{_texmfdistdir}/fonts/map/dvips/fetamont
-%{_texmfdistdir}/fonts/opentype/public/fetamont
-%{_texmfdistdir}/fonts/source/public/fetamont
-%{_texmfdistdir}/fonts/tfm/public/fetamont
-%{_texmfdistdir}/fonts/type1/public/fetamont
-%{_texmfdistdir}/tex/latex/fetamont
-%doc %{_texmfdistdir}/doc/fonts/fetamont
-#- source
-%doc %{_texmfdistdir}/source/fonts/fetamont
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
